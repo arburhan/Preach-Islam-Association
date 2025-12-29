@@ -1,28 +1,51 @@
+const logoSrc = '/logo.png';
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Preach Islam Association",
   description: "অসহায়-প্রান্তিক-গরীব-দুঃখী সকল জাতি-ধর্মের মানুষের কল্যাণে নিবেদিত একটি সমাজকল্যাণমূলক স্বেচ্ছাসেবী সংস্থা।",
+  mobile: "+8801772-084789",
+  email: "info@preach-islam.org",
+  location: "বাসা নং ১৬১, সেক্টর-৩, উপশহর, সপুরা-৬২০৩, রাজশাহী ।",
+  logoSrc: logoSrc,
   navItems: [
     {
-      label: "Home",
+      label: "আমাদের সম্পর্কে",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "লক্ষ্য ও উদ্দেশ্য",
+      href: "/vission-mission",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "সেবা সমূহ",
+      href: "/services",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "পরিচালনা কমিটি",
+      href: "/committee",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "বিবাহ প্লাটফর্ম",
+      href: "/marriage",
+    },
+    {
+      label: "ইভেন্টস",
+      href: "/events",
+    },
+    {
+      label: "যোগাযোগ",
+      href: "/contact",
+    },
+    {
+      label: "আরও দেখুন",
+      href: "#",
+      children: [
+        { label: "ভলান্টিয়ার", href: "/volunteer" },
+        { label: "শিক্ষা", href: "/services/education" },
+        { label: "আর্থিক সহায়তা", href: "/services/aid" },
+
+      ],
     },
   ],
   navMenuItems: [
