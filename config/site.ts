@@ -3,6 +3,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Preach Islam Association",
+  banglaName: "প্রিচ ইসলাম অ্যাসোসিয়েশন",
   description: "অসহায়-প্রান্তিক-গরীব-দুঃখী সকল জাতি-ধর্মের মানুষের কল্যাণে নিবেদিত একটি সমাজকল্যাণমূলক স্বেচ্ছাসেবী সংস্থা।",
   mobile: "+8801772-084789",
   email: "info@preach-islam.org",
