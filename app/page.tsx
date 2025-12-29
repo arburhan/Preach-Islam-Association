@@ -1,5 +1,6 @@
 import Hero from "@/components/home/hero";
 import { StatsSection } from "@/components/home/statsCard";
+import { OurHistory } from "@/components/home/outHistory";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <Hero />
       <StatsSection />
+      <OurHistory />
     </section>
   );
 }
