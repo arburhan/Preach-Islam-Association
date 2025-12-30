@@ -12,15 +12,15 @@ export const siteConfig = {
   navItems: [
     {
       label: "আমাদের সম্পর্কে",
-      href: "/",
+      href: "/about",
     },
     {
       label: "লক্ষ্য ও উদ্দেশ্য",
       href: "/vission-mission",
     },
     {
-      label: "সেবা সমূহ",
-      href: "/services",
+      label: "পরিচালনা প্রকল্প",
+      href: "/project-management",
     },
     {
       label: "পরিচালনা কমিটি",
