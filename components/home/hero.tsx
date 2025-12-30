@@ -83,7 +83,7 @@ const Hero = () => {
         <Link
           isExternal
           className={`${buttonStyles({ variant: "bordered", radius: "full" })} p-4, md:p-6 border-success hover:bg-success/10 `}
-          href={siteConfig.links.github}
+          href="/about"
         >
           আমাদের সম্পর্কে জানুন
         </Link>
