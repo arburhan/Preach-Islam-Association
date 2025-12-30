@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fi';
 import { IoIosRocket } from "react-icons/io";
 import { FaAward } from "react-icons/fa6";
-import Title from '../shared/title';
+import { title, subtitle } from '@/components/primitives';
 
 
 
@@ -58,7 +58,7 @@ const milestones = [
     icon: 5,
     color: 'from-red-500 to-rose-500',
   }, */
-  
+
 ];
 
 export const OurHistory = () => {
@@ -94,8 +94,11 @@ export const OurHistory = () => {
 
       <div className="container mx-auto max-w-6xl px-4 md:px-6 relative z-10">
         {/* Header */}
-        <Title title={"আমাদের যাত্রা"} subtitle={"প্রিচ ইসলাম অ্যাসোসিয়েশনের প্রতিষ্ঠা থেকে আজকের অবস্থান পর্যন্ত একটি অনুপ্রেরণামূলক যাত্রা"} />
-       
+        <div className="text-center mb-16">
+          <h2 className={title({ size: "sm", class: "mb-4" })}>আমাদের যাত্রা</h2>
+          <p className={subtitle({ size: "sm" })}>প্রিচ ইসলাম অ্যাসোসিয়েশনের প্রতিষ্ঠা থেকে আজকের অবস্থান পর্যন্ত একটি অনুপ্রেরণামূলক যাত্রা</p>
+        </div>
+
 
         {/* Timeline Container */}
         <div className="relative">

@@ -7,7 +7,7 @@ import {
   FiAward,
   FiMapPin,
 } from 'react-icons/fi';
-import Title from '../shared/title';
+import { title, subtitle } from '@/components/primitives';
 
 interface CounterProps {
   end: number;
@@ -119,7 +119,10 @@ export const StatsSection = () => {
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 relative">
         {/* Header */}
-        <Title title={"আমাদের অর্জন"} subtitle={"প্রিচ ইসলাম অ্যাসোসিয়েশন সমাজের সকল শ্রেণীর মানুষের কল্যাণে নিবেদিত"} />
+        <div className="text-center mb-16">
+          <h2 className={title({ size: "sm", class: "mb-4" })}>আমাদের অর্জন</h2>
+          <p className={subtitle({ size: "sm" })}>প্রিচ ইসলাম অ্যাসোসিয়েশন সমাজের সকল শ্রেণীর মানুষের কল্যাণে নিবেদিত</p>
+        </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">

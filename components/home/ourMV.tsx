@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardBody } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-import Title from "../shared/title";
+import { title, subtitle } from "@/components/primitives";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoDiamondSharp } from "react-icons/io5";
 
@@ -16,10 +16,14 @@ const missions = missionData.mission.slice(0, 6);
 const OurMV = () => {
     return (
         <section className="py-12 md:py-20 w-full px-4">
-            <Title
-                title="আমাদের লক্ষ্য ও উদ্দেশ্য"
-                subtitle="অসহায়-প্রান্তিক-গরীব-দুঃখীর কল্যাণে আমাদের ২৭ টি লক্ষ্য ও উদ্দেশ্য"
-            />
+            <div className="text-center mb-16">
+                <h2 className={title({ size: "sm", class: "mb-4" })}>
+                    আমাদের লক্ষ্য ও উদ্দেশ্য
+                </h2>
+                <p className={subtitle({ size: "sm" })}>
+                    অসহায়-প্রান্তিক-গরীব-দুঃখীর কল্যাণে আমাদের ২৭ টি লক্ষ্য ও উদ্দেশ্য
+                </p>
+            </div>
 
             {/* Mission Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-7xl mx-auto">
