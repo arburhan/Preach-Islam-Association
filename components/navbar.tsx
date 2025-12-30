@@ -11,10 +11,13 @@ import Image from 'next/image';
 
 import { TiThMenu } from "react-icons/ti";
 import { IoCloseSharp } from "react-icons/io5";
+import { useRouter } from 'next/navigation';
 
 
 export const Navbar = () => {
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
 
   return (
     <>
@@ -23,8 +26,8 @@ export const Navbar = () => {
           <div className="flex items-center justify-between h-16 md:h-18">
             {/* Logo & Brand */}
             <NextLink href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-             <Image src={siteConfig.logoSrc} alt="প্রিচ ইসলাম অ্যাসোসিয়েশন | Preach Islam Association" width={50} height={50} />
-              
+              <Image src={siteConfig.logoSrc} alt="প্রিচ ইসলাম অ্যাসোসিয়েশন | Preach Islam Association" width={50} height={50} />
+
               <div className="flex flex-col">
                 <p className="font-bold text-[16px] text-primary">প্রিচ ইসলাম অ্যাসোসিয়েশন</p>
                 <p className="text-xs text-gray-600 hidden sm:block">স্বেচ্ছাসেবী সংস্থা</p>
@@ -64,6 +67,7 @@ export const Navbar = () => {
                   <NextLink
                     key={item.href || idx}
                     href={item.href}
+                    onClick={() => router.push(item.href)}
                     className="px-3 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary-50 rounded-lg transition-colors duration-200 py-2"
                   >
                     {item.label}
@@ -75,11 +79,10 @@ export const Navbar = () => {
             {/* Right Side Actions */}
             <div className="flex items-center gap-2 md:gap-3">
               <Button
-                isExternal
                 as={Link}
                 className="hidden sm:flex   "
                 color="primary"
-                href={siteConfig.links.sponsor}
+                href="/donation"
                 variant="flat"
               >
                 দান করুন
