@@ -2,6 +2,7 @@ import Hero from "@/components/home/hero";
 import { StatsSection } from "@/components/home/statsCard";
 import { OurHistory } from "@/components/home/outHistory";
 import OurMV from "@/components/home/ourMV";
+import OurBoundaries from "@/components/home/ourBoundaries";
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <OurMV />
       <StatsSection />
+      <OurBoundaries />
       <OurHistory />
     </section>
   );
