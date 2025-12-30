@@ -10,6 +10,7 @@ import {
 import { IoIosRocket } from "react-icons/io";
 import { FaAward } from "react-icons/fa6";
 import { title, subtitle } from '@/components/primitives';
+import { JoinUs } from '../shared/buttons';
 
 
 
@@ -168,9 +169,8 @@ export const OurHistory = () => {
           <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
             আমরা এই যাত্রায় আপনাদের সকলকে সাথে নিতে চাই। আমাদের লক্ষ্য অর্জনে অংশীদার হোন।
           </p>
-          <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-            আমাদের সাথে যোগ দিন
-          </button>
+          <JoinUs />
+
         </div>
       </div>
 

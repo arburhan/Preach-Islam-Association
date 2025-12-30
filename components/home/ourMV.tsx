@@ -72,7 +72,7 @@ const OurMV = () => {
             >
                 <Button
                     as={Link}
-                    href="/mission-vision"
+                    href="/vission-mission"
                     size="lg"
                     color="success"
                     variant="shadow"

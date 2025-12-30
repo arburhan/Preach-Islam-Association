@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 
 import { BiDonateHeart } from "react-icons/bi";
+import { Donate } from "../shared/buttons";
 
 const Hero = () => {
   return (
@@ -78,7 +79,7 @@ const Hero = () => {
 
       </div>
 
-      <div className="flex gap-3 pb-6 md:pb-16">
+      <div className="flex flex-col md:flex-row justify-center gap-3 pb-6 md:pb-16">
         <Link
           isExternal
           className={`${buttonStyles({ variant: "bordered", radius: "full" })} p-4, md:p-6 border-success hover:bg-success/10 `}
@@ -87,17 +88,7 @@ const Hero = () => {
           আমাদের সম্পর্কে জানুন
         </Link>
 
-        <Link
-          isExternal
-          className={`${buttonStyles({
-            color: "success",
-            radius: "full",
-            variant: "shadow",
-          })} py-5 md:py-7`}
-          href={siteConfig.links.docs}
-        >
-          <BiDonateHeart className="group-hover:animate-bounce text-2xl md:text-5xl text-white " /> <span className="text-md md:text-lg text-white" >মাসিক দাতা হোন</span>
-        </Link>
+        <Donate />
 
       </div>
     </>
