@@ -23,10 +23,6 @@ export const siteConfig = {
       href: "/project-management",
     },
     {
-      label: "পরিচালনা কমিটি",
-      href: "/committee",
-    },
-    {
       label: "বিবাহ প্লাটফর্ম",
       href: "/marriage",
     },
