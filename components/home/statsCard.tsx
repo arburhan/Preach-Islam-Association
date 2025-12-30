@@ -109,7 +109,7 @@ export const StatsSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-white via-slate-50/50 to-blue-50/20 relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-white via-slate-50/50 to-blue-50/20 relative overflow-hidden w-full">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
