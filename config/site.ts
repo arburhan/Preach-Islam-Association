@@ -19,8 +19,8 @@ export const siteConfig = {
       href: "/vission-mission",
     },
     {
-      label: "সেবা সমূহ",
-      href: "/services",
+      label: "পরিচালনা প্রকল্প",
+      href: "/project-management",
     },
     {
       label: "পরিচালনা কমিটি",

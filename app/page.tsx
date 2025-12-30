@@ -3,6 +3,7 @@ import { StatsSection } from "@/components/home/statsCard";
 import { OurHistory } from "@/components/home/outHistory";
 import OurMV from "@/components/home/ourMV";
 import OurBoundaries from "@/components/home/ourBoundaries";
+import ProjectManagement from "@/components/home/projectManagement";
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <Hero />
       <OurMV />
+      <ProjectManagement />
       <StatsSection />
       <OurBoundaries />
       <OurHistory />
