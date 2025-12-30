@@ -4,6 +4,7 @@ import { OurHistory } from "@/components/home/outHistory";
 import OurMV from "@/components/home/ourMV";
 import OurBoundaries from "@/components/home/ourBoundaries";
 import ProjectManagement from "@/components/home/projectManagement";
+import DonationForm from "@/components/home/donationForm";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <OurMV />
       <ProjectManagement />
+      <DonationForm />
       <StatsSection />
       <OurBoundaries />
       <OurHistory />
