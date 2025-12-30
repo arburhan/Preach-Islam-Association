@@ -36,7 +36,7 @@ export const siteConfig = {
     },
     {
       label: "যোগাযোগ",
-      href: "/contact",
+      href: "/contacts",
     },
     {
       label: "আরও দেখুন",
