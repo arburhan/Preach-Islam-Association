@@ -178,39 +178,39 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full w-full"
                 >
-                  <div
+                  <Card
+                    as={stat.link ? "button" : "div"}
                     onClick={() => stat.link && router.push(stat.link)}
-                    className="block h-full w-full"
+                    className={`h-full w-full ${stat.link ? 'cursor-pointer hover:shadow-2xl hover:-translate-y-2' : ''} transition-all duration-300 border border-default-200 text-left`}
+                    shadow="md"
+                    isPressable={!!stat.link}
+                    role={stat.link ? "button" : undefined}
+                    aria-label={stat.link ? `${stat.label}-বিস্তারিত দেখুন` : undefined}
+                    tabIndex={stat.link ? 0 : undefined}
                   >
-                    <Card
-                      className={`h-full w-full ${stat.link ? 'cursor-pointer hover:shadow-2xl hover:-translate-y-2' : ''} transition-all duration-300 border border-default-200`}
-                      shadow="md"
-                      isPressable={!!stat.link}
-                    >
-                      <CardBody className="p-8 text-center flex flex-col items-center justify-center">
-                        <div className="mb-6">
-                          <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${stat.gradient}`}>
-                            <IconComponent className="text-white text-4xl" />
-                          </div>
+                    <CardBody className="p-8 text-center flex flex-col items-center justify-center">
+                      <div className="mb-6">
+                        <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${stat.gradient}`}>
+                          <IconComponent className="text-white text-4xl" />
                         </div>
-                        <h3 className="text-5xl font-black text-gray-900 mb-4">
-                          {stat.count}
-                        </h3>
-                        <p className="text-base font-semibold text-gray-700 mb-3 min-h-[3rem] flex items-center">
-                          {stat.label}
-                        </p>
-                        {stat.link && (
-                          <div className="flex items-center justify-center gap-1 text-sm text-primary mt-2">
-                            <span>বিস্তারিত দেখুন</span>
-                            <MdArrowForward />
-                          </div>
-                        )}
-                        {!stat.link && (
-                          <div className="h-6"></div>
-                        )}
-                      </CardBody>
-                    </Card>
-                  </div>
+                      </div>
+                      <h3 className="text-5xl font-black text-gray-900 mb-4">
+                        {stat.count}
+                      </h3>
+                      <p className="text-base font-semibold text-gray-700 mb-3 min-h-[3rem] flex items-center">
+                        {stat.label}
+                      </p>
+                      {stat.link && (
+                        <div className="flex items-center justify-center gap-1 text-sm text-primary mt-2">
+                          <span>বিস্তারিত দেখুন</span>
+                          <MdArrowForward />
+                        </div>
+                      )}
+                      {!stat.link && (
+                        <div className="h-6"></div>
+                      )}
+                    </CardBody>
+                  </Card>
                 </motion.div>
               );
             })}
@@ -334,6 +334,6 @@ export default function AboutPage() {
           </div>
         </motion.div>
       </div>
-    </div>
+    </div >
   );
 }
