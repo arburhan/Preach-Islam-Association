@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Card, CardBody } from '@heroui/card';
 import { Button } from '@heroui/button';
+import Link from 'next/link';
 
 interface Donation {
     _id: string;
@@ -163,16 +164,15 @@ export default function DonationsPage() {
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 text-sm text-gray-600">
-                                        <p>📱 {donation.mobile}</p>
-                                        {donation.email && <p>📧 {donation.email}</p>}
+                                        <Link href={`tel:${donation.mobile}`}>{donation.mobile}</Link>
                                     </td>
                                     <td className="px-6 py-4">
                                         <span
                                             className={`inline-block px-3 py-1 text-sm rounded ${donation.donationType === 'monthly'
-                                                    ? 'bg-blue-100 text-blue-700'
-                                                    : donation.donationType === 'yearly'
-                                                        ? 'bg-purple-100 text-purple-700'
-                                                        : 'bg-green-100 text-green-700'
+                                                ? 'bg-blue-100 text-blue-700'
+                                                : donation.donationType === 'yearly'
+                                                    ? 'bg-purple-100 text-purple-700'
+                                                    : 'bg-green-100 text-green-700'
                                                 }`}
                                         >
                                             {donation.donationType === 'monthly'
