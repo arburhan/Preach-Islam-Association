@@ -35,10 +35,10 @@ const OurBoundaries = () => {
                                     <FaHandsHelping className="text-blue-600 text-3xl" />
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4">
                                         আমাদের প্রতিশ্রুতি
                                     </h3>
-                                    <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                                    <p className="text-base  text-gray-700 leading-relaxed">
                                         দেশ ও জনগণের কল্যাণে আত্মনিয়োগ করার প্রয়োজনীয়তা ও গুরুত্ব উপলব্ধি করে,
                                         এবং নিজেদের সামর্থ্য ও শক্তিতে বিশ্বাস রেখে মহান আল্লাহ তায়ালার ওপর ভরসা করে—
                                         আমরা সমাজসেবায় নিবেদিত।
@@ -72,7 +72,7 @@ const OurBoundaries = () => {
 
                                 {/* Content */}
                                 <div className="text-center mb-6">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                                         বর্তমান কার্যক্রম
                                     </h3>
                                     <div className="inline-block px-4 py-2 bg-success/10 rounded-full">
@@ -109,7 +109,7 @@ const OurBoundaries = () => {
 
                                 {/* Content */}
                                 <div className="text-center mb-6">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                                         ভবিষ্যৎ পরিকল্পনা
                                     </h3>
                                     <div className="inline-block px-4 py-2 bg-blue-50 rounded-full">

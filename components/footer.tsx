@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import NextLink from 'next/link';
 import { siteConfig } from '@/config/site';
@@ -21,17 +21,16 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "আমাদের সম্পর্কে", href: "/" },
-    { name: "লক্ষ্য ও উদ্দেশ্য", href: "/docs" },
-    { name: "সেবা সমূহ", href: "/pricing" },
-    { name: "পরিচালনা কমিটি", href: "/blog" },
-    { name: "যোগাযোগ", href: "/about" },
+    { name: "আমাদের সম্পর্কে", href: "/about" },
+    { name: "লক্ষ্য ও উদ্দেশ্য", href: "/vission-mission" },
+    { name: "পরিচালনা প্রকল্প", href: "/project-management" },
+    { name: "যোগাযোগ", href: "/contacts" },
   ];
 
   const supportLinks = [
-    { name: "সেবা সমূহ", href: "/pricing" },
-    { name: "যোগাযোগ", href: "/about" },
-    { name: "ইভেন্টস", href: "/blog" },
+    { name: "দান করুন", href: "/donate" },
+    { name: "ইভেন্টস", href: "/events" },
+    { name: "ভলান্টিয়ার", href: "/volunteer" },
   ];
 
   return (
@@ -44,7 +43,7 @@ export const Footer = () => {
             <div className="flex items-center space-x-4">
               <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center shadow-lg">
                 <Image src={siteConfig.logoSrc} alt="প্রিচ ইসলাম অ্যাসোসিয়েশন | Preach Islam Association" width={50} height={50} />
-                
+
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">প্রিচ ইসলাম অ্যাসোসিয়েশন</h3>
@@ -61,14 +60,14 @@ export const Footer = () => {
               {/* Phone */}
               <div className="flex items-center space-x-4">
                 <div className="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                  <FaSquarePhoneFlip  className="w-5 h-5 text-blue-400" />
+                  <FaSquarePhoneFlip className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold">যোগাযোগ</p>               
+                  <p className="text-white font-semibold">যোগাযোগ</p>
                   <NextLink
-                href={`tel:${siteConfig.mobile}`} >
+                    href={`tel:${siteConfig.mobile}`} >
                     <span className="text-blue-400 font-bold text-lg">{siteConfig.mobile} </span>
-              </NextLink>
+                  </NextLink>
                 </div>
               </div>
 
@@ -78,19 +77,19 @@ export const Footer = () => {
                   <FaEnvelope className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
-               
+
                   <p className="text-white font-semibold">ইমেইল</p>
-                <NextLink
-                href={`mailto:${siteConfig.email}`} >
+                  <NextLink
+                    href={`mailto:${siteConfig.email}`} >
                     <span className="text-gray-300">{siteConfig.email} </span>
-              </NextLink>
+                  </NextLink>
                 </div>
               </div>
 
               {/* Location */}
               <div className="flex items-center space-x-4">
                 <div className="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                  <FaMapMarkerAlt  className="w-5 h-5 text-blue-400" />
+                  <FaMapMarkerAlt className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <p className="text-white font-semibold">অফিস</p>
@@ -165,7 +164,7 @@ export const Footer = () => {
                 className="text-red-200 hover:text-white transition-colors duration-200 flex items-center space-x-2 font-semibold"
               >
                 <span>এখনই কল করুন <br /> +8801772-084789 </span>
-                
+
               </NextLink>
             </div>
           </div>

@@ -23,10 +23,6 @@ export const siteConfig = {
       href: "/project-management",
     },
     {
-      label: "পরিচালনা কমিটি",
-      href: "/committee",
-    },
-    {
       label: "বিবাহ প্লাটফর্ম",
       href: "/marriage",
     },
@@ -36,13 +32,14 @@ export const siteConfig = {
     },
     {
       label: "যোগাযোগ",
-      href: "/contact",
+      href: "/contacts",
     },
     {
       label: "আরও দেখুন",
       href: "#",
       children: [
         { label: "ভলান্টিয়ার", href: "/volunteer" },
+        { label: "লগ ইন", href: "/auth/login" },
         { label: "শিক্ষা", href: "/services/education" },
         { label: "আর্থিক সহায়তা", href: "/services/aid" },
 

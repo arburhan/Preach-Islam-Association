@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import { Button } from "@heroui/button";
-import { Link } from "@heroui/link";
+import { Link as HeroUILink } from "@heroui/link";
 import { title, subtitle } from "@/components/primitives";
 import {
   FaCalendarAlt,
@@ -14,15 +14,15 @@ import {
   FaUsers,
   FaHandHoldingHeart
 } from "react-icons/fa";
-import { MdVerified, MdArrowForward } from "react-icons/md";
+import { MdVerified } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
 import { Divider } from "@heroui/divider";
+
 import missionData from "@/public/missionVission.json";
 import projectData from "@/public/projectManagement.json";
-import { useRouter } from "next/navigation";
+
 
 export default function AboutPage() {
-  const router = useRouter();
   const stats = [
     {
       icon: FaBullseye,
@@ -30,7 +30,6 @@ export default function AboutPage() {
       label: "লক্ষ্য ও উদ্দেশ্য",
       color: "success",
       gradient: "from-success to-green-600",
-      link: "/vission-mission"
     },
     {
       icon: FaProjectDiagram,
@@ -38,7 +37,6 @@ export default function AboutPage() {
       label: "কার্য পরিচালনা প্রকল্প",
       color: "warning",
       gradient: "from-warning to-orange-600",
-      link: "/project-management"
     },
     {
       icon: FaUsers,
@@ -46,7 +44,6 @@ export default function AboutPage() {
       label: "সেবাপ্রাপ্ত মানুষ",
       color: "primary",
       gradient: "from-blue-500 to-cyan-500",
-      link: null
     },
     {
       icon: FaHandHoldingHeart,
@@ -54,7 +51,6 @@ export default function AboutPage() {
       label: "স্বেচ্ছাসেবক",
       color: "secondary",
       gradient: "from-purple-500 to-pink-500",
-      link: null
     }
   ];
 
@@ -85,7 +81,7 @@ export default function AboutPage() {
     <div className="w-full px-4 py-12">
       {/* Header */}
       <div className="text-center mb-16">
-        <h1 className={title({ size: "lg", class: "mb-4" })}>
+        <h1 className={title({ size: "md", class: "mb-4" })}>
           আমাদের সম্পর্কে
         </h1>
         <p className={subtitle({ size: "md", color: "green" })}>
@@ -106,7 +102,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Organization Name */}
                 <div className="md:col-span-2 text-center mb-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2">
                     প্রিচ ইসলাম অ্যাসোসিয়েশন
                   </h2>
                   <p className="text-lg text-gray-600">Preach Islam Association</p>
@@ -178,39 +174,25 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full w-full"
                 >
-                  <div
-                    onClick={() => stat.link && router.push(stat.link)}
-                    className="block h-full w-full"
+                  <Card
+                    className="h-full w-full transition-all duration-300 border border-default-200"
+                    shadow="md"
                   >
-                    <Card
-                      className={`h-full w-full ${stat.link ? 'cursor-pointer hover:shadow-2xl hover:-translate-y-2' : ''} transition-all duration-300 border border-default-200`}
-                      shadow="md"
-                      isPressable={!!stat.link}
-                    >
-                      <CardBody className="p-8 text-center flex flex-col items-center justify-center">
-                        <div className="mb-6">
-                          <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${stat.gradient}`}>
-                            <IconComponent className="text-white text-4xl" />
-                          </div>
+                    <CardBody className="p-8 text-center flex flex-col items-center justify-center">
+                      <div className="mb-6">
+                        <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${stat.gradient}`}>
+                          <IconComponent className="text-white text-4xl" />
                         </div>
-                        <h3 className="text-5xl font-black text-gray-900 mb-4">
-                          {stat.count}
-                        </h3>
-                        <p className="text-base font-semibold text-gray-700 mb-3 min-h-[3rem] flex items-center">
-                          {stat.label}
-                        </p>
-                        {stat.link && (
-                          <div className="flex items-center justify-center gap-1 text-sm text-primary mt-2">
-                            <span>বিস্তারিত দেখুন</span>
-                            <MdArrowForward />
-                          </div>
-                        )}
-                        {!stat.link && (
-                          <div className="h-6"></div>
-                        )}
-                      </CardBody>
-                    </Card>
-                  </div>
+                      </div>
+                      <h3 className="text-5xl font-black text-gray-900 mb-4">
+                        {stat.count}
+                      </h3>
+                      <p className="text-base font-semibold text-gray-700 mb-3 min-h-[3rem] flex items-center">
+                        {stat.label}
+                      </p>
+                      <div className="h-6"></div>
+                    </CardBody>
+                  </Card>
                 </motion.div>
               );
             })}
@@ -311,8 +293,8 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                as={Link}
-                href="/contact"
+                as={HeroUILink}
+                href="/contacts"
                 size="lg"
                 color="success"
                 variant="shadow"
@@ -321,7 +303,7 @@ export default function AboutPage() {
                 যোগাযোগ করুন
               </Button>
               <Button
-                as={Link}
+                as={HeroUILink}
                 href="/vission-mission"
                 size="lg"
                 color="primary"
@@ -334,6 +316,6 @@ export default function AboutPage() {
           </div>
         </motion.div>
       </div>
-    </div>
+    </div >
   );
 }

@@ -13,7 +13,7 @@ export default function ProjectManagementPage() {
         <div className="w-full px-4 py-12">
             {/* Header */}
             <div className="text-center mb-16">
-                <h1 className={title({ size: "lg", class: "mb-4" })}>
+                <h1 className={title({ size: "md", class: "mb-4" })}>
                     কার্য পরিচালনা প্রকল্প
                 </h1>
                 <p className={subtitle({ size: "md", color: "cyan" })}>
