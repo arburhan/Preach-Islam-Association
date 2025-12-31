@@ -113,8 +113,10 @@ export default function DonatorForm({ locale = 'bn' }: DonatorFormProps) {
                             src="/donate.png"
                             alt="Donate Image"
                             className='pt-20'
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                             fill
-                            priority
+
                         />
                     </div>
                     <form

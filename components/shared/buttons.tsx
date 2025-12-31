@@ -6,7 +6,7 @@ import { BiDonateHeart } from "react-icons/bi";
 export const JoinUs = () => (
     <Link
         className="px-8 py-2 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-        href={"/about"}
+        href={"/volunteer"}
     >আমাদের সাথে যোগ দিন
     </Link>
 );

@@ -11,10 +11,10 @@ export default function DonationPage() {
             <span className="text-xl">📖</span>
             {locale === "bn" ? "হাদিস" : "Hadith"}
           </h4>
-          <div className="text-base md:text-md text-gray-800 leading-relaxed space-y-3">
+          <div className="text-base  text-gray-800 leading-relaxed space-y-3">
             {locale === "bn" ? (
               <>
-                <p className="font-semibold text-md md:text-md text-blue-900">
+                <p className="font-semibold  text-blue-900">
                   "বান্দা বলে: আমার সম্পদ! আমার সম্পদ! অথচ সে মাত্র তিনটি বস্তুর মালিক:"
                 </p>
                 <ul className="text-left max-w-3xl mx-auto">

@@ -133,10 +133,10 @@ export const OurHistory = () => {
                       <div className={`text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r ${milestone.color} mb-2`}>
                         {milestone.year}
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 md:mb-3">
                         {milestone.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed text-lg">
+                      <p className="text-gray-600 leading-relaxed ">
                         {milestone.description}
                       </p>
                     </div>

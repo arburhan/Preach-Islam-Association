@@ -106,7 +106,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Organization Name */}
                 <div className="md:col-span-2 text-center mb-4">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2">
                     প্রিচ ইসলাম অ্যাসোসিয়েশন
                   </h2>
                   <p className="text-lg text-gray-600">Preach Islam Association</p>
@@ -312,7 +312,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 as={Link}
-                href="/contact"
+                href="/contacts"
                 size="lg"
                 color="success"
                 variant="shadow"

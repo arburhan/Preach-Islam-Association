@@ -81,7 +81,6 @@ const Hero = () => {
 
       <div className="flex flex-col md:flex-row justify-center gap-3 pb-6 md:pb-16">
         <Link
-          isExternal
           className={`${buttonStyles({ variant: "bordered", radius: "full" })} p-4, md:p-6 border-success hover:bg-success/10 `}
           href="/about"
         >

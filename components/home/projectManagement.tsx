@@ -46,7 +46,7 @@ const ProjectManagement = () => {
                                     </div>
                                     <div className="flex flex-col flex-1">
                                         <p className="text-sm text-warning font-bold">প্রজেক্ট #{project.id}</p>
-                                        <h3 className="text-base md:text-lg font-bold text-gray-900 leading-tight">
+                                        <h3 className=" font-bold text-gray-900 leading-tight">
                                             {project.problem}
                                         </h3>
                                     </div>
@@ -59,7 +59,7 @@ const ProjectManagement = () => {
                                         </div>
                                         <div className="flex-1">
                                             <p className="text-sm font-semibold text-success mb-2">সমাধান:</p>
-                                            <p className="text-gray-700 leading-relaxed line-clamp-4">
+                                            <p className=" text-gray-700 leading-relaxed line-clamp-4">
                                                 {project.solution}
                                             </p>
                                         </div>
