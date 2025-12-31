@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 import SessionProvider from "@/components/SessionProvider";
 import { ConditionalLayout } from "@/components/ConditionalLayout";
+import { Toaster } from "react-hot-toast";
 
 import { siteConfig } from "@/config/site";
 import { fontSans, fontBengali } from "@/config/fonts";
@@ -49,6 +50,30 @@ export default function RootLayout({
             </ConditionalLayout>
           </Providers>
         </SessionProvider>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: '#333',
+              color: '#fff',
+            },
+            success: {
+              duration: 3000,
+              iconTheme: {
+                primary: '#10b981',
+                secondary: '#fff',
+              },
+            },
+            error: {
+              duration: 4000,
+              iconTheme: {
+                primary: '#ef4444',
+                secondary: '#fff',
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );

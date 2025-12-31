@@ -7,6 +7,7 @@ import { Input, Textarea } from '@heroui/input';
 import { Button } from '@heroui/button';
 import { siteConfig } from '@/config/site';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function ContactsPage() {
   const [formData, setFormData] = useState({
@@ -46,13 +47,13 @@ export default function ContactsPage() {
           message: '',
         });
 
-        setTimeout(() => setSubmitSuccess(false), 5000);
+        toast.success('আপনার বার্তা সফলভাবে পাঠানো হয়েছে');
       } else {
-        alert(data.message || 'Error occurred');
+        toast.error(data.message || 'Error occurred');
       }
     } catch (error) {
       console.error('Contact form error:', error);
-      alert('সার্ভার সমস্যা হয়েছে');
+      toast.error('সার্ভার সমস্যা হয়েছে');
     } finally {
       setIsSubmitting(false);
     }

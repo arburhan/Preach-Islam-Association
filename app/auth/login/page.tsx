@@ -8,6 +8,7 @@ import { Button } from '@heroui/button';
 import { FaEnvelope, FaHome } from 'react-icons/fa';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 export default function LoginPage() {
     const router = useRouter();
@@ -48,12 +49,13 @@ export default function LoginPage() {
 
             if (data.success) {
                 setSubmitted(true);
+                toast.success('লগইন লিঙ্ক আপনার ইমেইলে পাঠানো হয়েছে');
             } else {
-                alert(data.message || 'এরর হয়েছে');
+                toast.error(data.message || 'এরর হয়েছে');
             }
         } catch (err) {
             console.error('Login error:', err);
-            alert('সার্ভার সমস্যা হয়েছে');
+            toast.error('সার্ভার সমস্যা হয়েছে');
         } finally {
             setIsSubmitting(false);
         }

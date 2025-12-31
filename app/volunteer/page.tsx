@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { FaUserPlus, FaCheckCircle, FaLightbulb } from 'react-icons/fa';
 import { GoHeartFill } from "react-icons/go";
 import { FaHandshakeSimple } from "react-icons/fa6";
+import toast from 'react-hot-toast';
 
 
 export default function VolunteerPage() {
@@ -45,6 +46,7 @@ export default function VolunteerPage() {
             if (data.success) {
                 console.log('Volunteer form submitted:', formData);
                 setIsSubmitted(true);
+                toast.success('আপনার আবেদন সফলভাবে জমা হয়েছে');
 
                 // Reset form after 3 seconds
                 setTimeout(() => {
@@ -61,11 +63,11 @@ export default function VolunteerPage() {
                     });
                 }, 3000);
             } else {
-                alert('Error: ' + data.message);
+                toast.error('Error: ' + data.message);
             }
         } catch (error) {
             console.error('Error submitting volunteer form:', error);
-            alert('সার্ভার সমস্যা হয়েছে');
+            toast.error('সার্ভার সমস্যা হয়েছে');
         }
     };
 
@@ -110,10 +112,9 @@ export default function VolunteerPage() {
     }
 
     return (
-        <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="w-full min-h-screen">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-primary-600 via-primary-500 to-blue-600 text-white py-16 md:py-20 rounded-2xl">
-                <div className="absolute inset-0 bg-black/10"></div>
+            <section className="relative text-black py-16 md:py-20 rounded-2xl">
                 <div className="container mx-auto px-4 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -121,12 +122,10 @@ export default function VolunteerPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mx-auto"
                     >
-                        <FaUserPlus className="text-5xl md:text-6xl mx-auto mb-6" />
-
-                        <h1 className={title({ size: "sm", class: "mb-4" })}>
+                        <h1 className={title({ size: "md", class: "mb-4" })}>
                             স্বেচ্ছাসেবক নিবন্ধন
                         </h1>
-                        <p className={`${subtitle({ size: "md" })} text-white`}>
+                        <p className={`${subtitle({ size: "md" })} text-black`}>
                             আমাদের সাথে যুক্ত হোন এবং সমাজের কল্যাণে অবদান রাখুন। আপনার ছোট প্রচেষ্টা বড় পরিবর্তন আনতে পারে।
                         </p>
 
@@ -168,7 +167,7 @@ export default function VolunteerPage() {
                                             type="text"
                                             name="name"
                                             label={locale === 'bn' ? 'পূর্ণ নাম' : 'Full Name'}
-                                            placeholder={locale === 'bn' ? 'আপনার পূর্ণ নাম লিখুন' : 'Enter your full name'}
+
                                             value={formData.name}
                                             onChange={handleChange}
                                             variant="bordered"
@@ -182,7 +181,7 @@ export default function VolunteerPage() {
                                                 type="email"
                                                 name="email"
                                                 label={locale === 'bn' ? 'ইমেইল' : 'Email'}
-                                                placeholder="example@email.com"
+
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 variant="bordered"
@@ -195,7 +194,7 @@ export default function VolunteerPage() {
                                                 type="tel"
                                                 name="phone"
                                                 label={locale === 'bn' ? 'মোবাইল নম্বর' : 'Phone Number'}
-                                                placeholder="01XXX-XXXXXX"
+
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                                 variant="bordered"
@@ -210,7 +209,7 @@ export default function VolunteerPage() {
                                                 type="number"
                                                 name="age"
                                                 label={locale === 'bn' ? 'বয়স' : 'Age'}
-                                                placeholder={locale === 'bn' ? 'আপনার বয়স' : 'Your age'}
+
                                                 value={formData.age}
                                                 onChange={handleChange}
                                                 variant="bordered"
@@ -225,7 +224,7 @@ export default function VolunteerPage() {
                                                 type="text"
                                                 name="location"
                                                 label={locale === 'bn' ? 'ঠিকানা' : 'Location'}
-                                                placeholder={locale === 'bn' ? 'শহর, জেলা' : 'City, District'}
+
                                                 value={formData.location}
                                                 onChange={handleChange}
                                                 variant="bordered"
@@ -246,7 +245,7 @@ export default function VolunteerPage() {
                                             type="text"
                                             name="profession"
                                             label={locale === 'bn' ? 'পেশা' : 'Profession'}
-                                            placeholder={locale === 'bn' ? 'আপনার পেশা লিখুন' : 'Enter your profession'}
+
                                             value={formData.profession}
                                             onChange={handleChange}
                                             variant="bordered"
@@ -258,11 +257,7 @@ export default function VolunteerPage() {
                                             isRequired
                                             name="skills"
                                             label={locale === 'bn' ? 'দক্ষতা ও অভিজ্ঞতা' : 'Skills & Experience'}
-                                            placeholder={
-                                                locale === 'bn'
-                                                    ? 'আপনার দক্ষতা এবং অভিজ্ঞতা সম্পর্কে লিখুন'
-                                                    : 'Write about your skills and experience'
-                                            }
+
                                             value={formData.skills}
                                             onChange={handleChange}
                                             variant="bordered"
@@ -273,9 +268,7 @@ export default function VolunteerPage() {
                                         <Select
                                             isRequired
                                             label={locale === 'bn' ? 'সময় উপলব্ধতা' : 'Availability'}
-                                            placeholder={
-                                                locale === 'bn' ? 'আপনার সময় নির্বাচন করুন' : 'Select your availability'
-                                            }
+
                                             selectedKeys={formData.availability ? [formData.availability] : []}
                                             onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
                                             variant="bordered"
