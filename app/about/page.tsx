@@ -14,12 +14,13 @@ import {
   FaUsers,
   FaHandHoldingHeart
 } from "react-icons/fa";
-import { MdVerified, MdArrowForward } from "react-icons/md";
+import { MdVerified } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
 import { Divider } from "@heroui/divider";
+
 import missionData from "@/public/missionVission.json";
 import projectData from "@/public/projectManagement.json";
-import Link from "next/link";
+
 
 export default function AboutPage() {
   const stats = [
@@ -29,7 +30,6 @@ export default function AboutPage() {
       label: "লক্ষ্য ও উদ্দেশ্য",
       color: "success",
       gradient: "from-success to-green-600",
-      link: "/vission-mission"
     },
     {
       icon: FaProjectDiagram,
@@ -37,7 +37,6 @@ export default function AboutPage() {
       label: "কার্য পরিচালনা প্রকল্প",
       color: "warning",
       gradient: "from-warning to-orange-600",
-      link: "/project-management"
     },
     {
       icon: FaUsers,
@@ -45,7 +44,6 @@ export default function AboutPage() {
       label: "সেবাপ্রাপ্ত মানুষ",
       color: "primary",
       gradient: "from-blue-500 to-cyan-500",
-      link: null
     },
     {
       icon: FaHandHoldingHeart,
@@ -53,7 +51,6 @@ export default function AboutPage() {
       label: "স্বেচ্ছাসেবক",
       color: "secondary",
       gradient: "from-purple-500 to-pink-500",
-      link: null
     }
   ];
 
@@ -177,53 +174,25 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full w-full"
                 >
-                  {stat.link ? (
-                    <Link href={stat.link} className="block h-full w-full">
-                      <Card
-                        className={`h-full w-full cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-default-200`}
-                        shadow="md"
-                        isPressable
-                      >
-                        <CardBody className="p-8 text-center flex flex-col items-center justify-center">
-                          <div className="mb-6">
-                            <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${stat.gradient}`}>
-                              <IconComponent className="text-white text-4xl" />
-                            </div>
-                          </div>
-                          <h3 className="text-5xl font-black text-gray-900 mb-4">
-                            {stat.count}
-                          </h3>
-                          <p className="text-base font-semibold text-gray-700 mb-3 min-h-[3rem] flex items-center">
-                            {stat.label}
-                          </p>
-                          <div className="flex items-center justify-center gap-1 text-sm text-primary mt-2">
-                            <span>বিস্তারিত দেখুন</span>
-                            <MdArrowForward />
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Link>
-                  ) : (
-                    <Card
-                      className="h-full w-full transition-all duration-300 border border-default-200"
-                      shadow="md"
-                    >
-                      <CardBody className="p-8 text-center flex flex-col items-center justify-center">
-                        <div className="mb-6">
-                          <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${stat.gradient}`}>
-                            <IconComponent className="text-white text-4xl" />
-                          </div>
+                  <Card
+                    className="h-full w-full transition-all duration-300 border border-default-200"
+                    shadow="md"
+                  >
+                    <CardBody className="p-8 text-center flex flex-col items-center justify-center">
+                      <div className="mb-6">
+                        <div className={`w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br ${stat.gradient}`}>
+                          <IconComponent className="text-white text-4xl" />
                         </div>
-                        <h3 className="text-5xl font-black text-gray-900 mb-4">
-                          {stat.count}
-                        </h3>
-                        <p className="text-base font-semibold text-gray-700 mb-3 min-h-[3rem] flex items-center">
-                          {stat.label}
-                        </p>
-                        <div className="h-6"></div>
-                      </CardBody>
-                    </Card>
-                  )}
+                      </div>
+                      <h3 className="text-5xl font-black text-gray-900 mb-4">
+                        {stat.count}
+                      </h3>
+                      <p className="text-base font-semibold text-gray-700 mb-3 min-h-[3rem] flex items-center">
+                        {stat.label}
+                      </p>
+                      <div className="h-6"></div>
+                    </CardBody>
+                  </Card>
                 </motion.div>
               );
             })}

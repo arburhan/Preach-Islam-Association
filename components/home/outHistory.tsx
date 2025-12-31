@@ -175,7 +175,7 @@ export const OurHistory = () => {
       </div>
 
       {/* Animation Styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideInWithBounce {
           from {
             opacity: 0;

@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import { motion } from 'framer-motion';
 import { Card, CardBody } from '@heroui/card';
 import { FaSpinner } from 'react-icons/fa';
 
-export default function VerifyLoginPage() {
+function VerifyLoginContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const token = searchParams.get('token');
@@ -66,5 +66,27 @@ export default function VerifyLoginPage() {
                 </Card>
             </motion.div>
         </div>
+    );
+}
+
+export default function VerifyLoginPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 px-4">
+                <Card className="shadow-2xl">
+                    <CardBody className="p-12 text-center">
+                        <FaSpinner className="text-6xl text-primary-600 mx-auto mb-6 animate-spin" />
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                            লগইন হচ্ছে...
+                        </h2>
+                        <p className="text-gray-600">
+                            অনুগ্রহ করে অপেক্ষা করুন
+                        </p>
+                    </CardBody>
+                </Card>
+            </div>
+        }>
+            <VerifyLoginContent />
+        </Suspense>
     );
 }

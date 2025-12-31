@@ -172,7 +172,7 @@ export const StatsSection = () => {
       </div>
 
       {/* Animation styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideUp {
           from {
             opacity: 0;
