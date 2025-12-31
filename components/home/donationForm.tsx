@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -38,6 +38,7 @@ interface DonatorFormProps {
 
 export default function DonatorForm({ locale = 'bn' }: DonatorFormProps) {
     const t = labels[locale];
+    const [mounted, setMounted] = useState(false);
     const [form, setForm] = useState({
         name: '',
         address: '',
@@ -46,6 +47,10 @@ export default function DonatorForm({ locale = 'bn' }: DonatorFormProps) {
         amount: '',
         comment: '',
     });
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -91,10 +96,12 @@ export default function DonatorForm({ locale = 'bn' }: DonatorFormProps) {
 
     return (
         <section className='py-5 md:py-18'>
-            <Toaster
-                position="top-center"
-                reverseOrder={false}
-            />
+            {mounted && (
+                <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+                />
+            )}
             <div className='py-5'>
                 <h2 className='text-center text-amber-500 font-bold text-3xl'>আপনার দানের হাতকে প্রসারিত করুন</h2>
                 {message && (
