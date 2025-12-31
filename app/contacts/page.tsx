@@ -16,6 +16,8 @@ export default function ContactsPage() {
     subject: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,8 +25,37 @@ export default function ContactsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        alert(data.message || 'Error occurred');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      alert('সার্ভার সমস্যা হয়েছে');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -147,7 +178,7 @@ export default function ContactsPage() {
                       type="text"
                       name="name"
                       label="আপনার নাম"
-                      placeholder="নাম লিখুন"
+
                       value={formData.name}
                       onChange={handleChange}
                       variant="bordered"
@@ -159,7 +190,7 @@ export default function ContactsPage() {
                         type="email"
                         name="email"
                         label="ইমেইল"
-                        placeholder="example@email.com"
+
                         value={formData.email}
                         onChange={handleChange}
                         variant="bordered"
@@ -170,7 +201,7 @@ export default function ContactsPage() {
                         type="tel"
                         name="phone"
                         label="মোবাইল নম্বর"
-                        placeholder="01XXX-XXXXXX"
+
                         value={formData.phone}
                         onChange={handleChange}
                         variant="bordered"
@@ -182,7 +213,7 @@ export default function ContactsPage() {
                       type="text"
                       name="subject"
                       label="বিষয়"
-                      placeholder="আপনার বার্তার বিষয়"
+
                       value={formData.subject}
                       onChange={handleChange}
                       variant="bordered"
@@ -192,20 +223,28 @@ export default function ContactsPage() {
                       isRequired
                       name="message"
                       label="বার্তা"
-                      placeholder="আপনার বার্তা লিখুন"
+
                       value={formData.message}
                       onChange={handleChange}
                       variant="bordered"
                       color="primary"
                       minRows={5}
                     />
+
+                    {submitSuccess && (
+                      <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                        ✅ আপনার বার্তা সফলভাবে পাঠানো হয়েছে!
+                      </div>
+                    )}
+
                     <Button
                       type="submit"
                       color="primary"
                       size="lg"
                       className="w-full font-semibold"
+                      isLoading={isSubmitting}
                     >
-                      বার্তা পাঠান
+                      {isSubmitting ? 'পাঠানো হচ্ছে...' : 'বার্তা পাঠান'}
                     </Button>
                   </form>
                 </CardBody>

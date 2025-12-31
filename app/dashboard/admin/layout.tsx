@@ -4,7 +4,7 @@ import { useSession, signOut } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FaUsers, FaUsersCog, FaDonate, FaHandHoldingHeart, FaBars, FaTimes, FaSignOutAlt, FaHome } from 'react-icons/fa';
+import { FaUsers, FaUsersCog, FaDonate, FaHandHoldingHeart, FaBars, FaTimes, FaSignOutAlt, FaHome, FaEnvelope } from 'react-icons/fa';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     const { data: session, status } = useSession();
@@ -53,6 +53,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             name: 'Donations',
             href: '/dashboard/admin/donations',
             icon: FaDonate,
+            roles: ['admin', 'superadmin'],
+        },
+        {
+            name: 'Messages',
+            href: '/dashboard/admin/messages',
+            icon: FaEnvelope,
             roles: ['admin', 'superadmin'],
         },
         {
