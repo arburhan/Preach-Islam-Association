@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from 'react';
 import { Card, CardBody } from '@heroui/card';
@@ -119,10 +119,10 @@ export default function VolunteersPage() {
                                     <h3 className="text-xl font-bold text-gray-900">{volunteer.name}</h3>
                                     <span
                                         className={`inline-block mt-2 px-3 py-1 text-sm rounded ${volunteer.status === 'approved'
-                                                ? 'bg-green-100 text-green-700'
-                                                : volunteer.status === 'rejected'
-                                                    ? 'bg-red-100 text-red-700'
-                                                    : 'bg-yellow-100 text-yellow-700'
+                                            ? 'bg-green-100 text-green-700'
+                                            : volunteer.status === 'rejected'
+                                                ? 'bg-red-100 text-red-700'
+                                                : 'bg-yellow-100 text-yellow-700'
                                             }`}
                                     >
                                         {volunteer.status.toUpperCase()}

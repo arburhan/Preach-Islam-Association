@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from 'framer-motion';
 import { Card, CardBody } from '@heroui/card';

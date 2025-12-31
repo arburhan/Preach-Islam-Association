@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
 import { useSession } from 'next-auth/react';
 import { Card, CardBody } from '@heroui/card';
 import { FaUsers, FaUserCheck, FaClock, FaDonate, FaHandHoldingHeart } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function AdminDashboardPage() {
     const { data: session } = useSession();
@@ -121,35 +122,33 @@ export default function AdminDashboardPage() {
             <div className="mt-12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Actions</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
-                        <CardBody className="p-6">
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Pending User Approvals</h3>
-                            <p className="text-gray-600 mb-4">
-                                {stats.pendingUsers} users waiting for approval
-                            </p>
-                            <a
-                                href="/dashboard/admin/users"
-                                className="text-primary-600 font-semibold hover:underline"
-                            >
-                                View Pending →
-                            </a>
-                        </CardBody>
-                    </Card>
+                    <Link href="/dashboard/admin/users">
+                        <Card className="shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                            <CardBody className="p-6">
+                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Pending User Approvals</h3>
+                                <p className="text-gray-600 mb-4">
+                                    {stats.pendingUsers} users waiting for approval
+                                </p>
+                                <span className="text-primary-600 font-semibold">
+                                    View Pending →
+                                </span>
+                            </CardBody>
+                        </Card>
+                    </Link>
 
-                    <Card className="shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
-                        <CardBody className="p-6">
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2">Recent Donations</h3>
-                            <p className="text-gray-600 mb-4">
-                                {stats.totalDonations} total donations received
-                            </p>
-                            <a
-                                href="/dashboard/admin/donations"
-                                className="text-primary-600 font-semibold hover:underline"
-                            >
-                                View All →
-                            </a>
-                        </CardBody>
-                    </Card>
+                    <Link href="/dashboard/admin/donations">
+                        <Card className="shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                            <CardBody className="p-6">
+                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Recent Donations</h3>
+                                <p className="text-gray-600 mb-4">
+                                    {stats.totalDonations} total donations received
+                                </p>
+                                <span className="text-primary-600 font-semibold">
+                                    View All →
+                                </span>
+                            </CardBody>
+                        </Card>
+                    </Link>
                 </div>
             </div>
         </div>

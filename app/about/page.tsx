@@ -180,13 +180,15 @@ export default function AboutPage() {
                 >
                   <Card
                     as={stat.link ? "button" : "div"}
-                    onClick={() => stat.link && router.push(stat.link)}
+                    {...(stat.link && {
+                      onClick: () => router.push(stat.link),
+                      role: "button",
+                      "aria-label": `${stat.label}-বিস্তারিত দেখুন`,
+                      tabIndex: 0,
+                    })}
                     className={`h-full w-full ${stat.link ? 'cursor-pointer hover:shadow-2xl hover:-translate-y-2' : ''} transition-all duration-300 border border-default-200 text-left`}
                     shadow="md"
                     isPressable={!!stat.link}
-                    role={stat.link ? "button" : undefined}
-                    aria-label={stat.link ? `${stat.label}-বিস্তারিত দেখুন` : undefined}
-                    tabIndex={stat.link ? 0 : undefined}
                   >
                     <CardBody className="p-8 text-center flex flex-col items-center justify-center">
                       <div className="mb-6">

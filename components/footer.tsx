@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import NextLink from 'next/link';
 import { siteConfig } from '@/config/site';
