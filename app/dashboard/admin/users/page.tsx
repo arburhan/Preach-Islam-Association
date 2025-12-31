@@ -76,13 +76,6 @@ export default function UsersManagementPage() {
         }
     };
 
-    const filteredUsers =
-        filter === 'all'
-            ? users
-            : filter === 'pending'
-                ? users.filter((u) => !u.isApproved)
-                : users.filter((u) => u.isApproved);
-
     return (
         <div>
             <div className="mb-8">
@@ -119,7 +112,7 @@ export default function UsersManagementPage() {
                 <div className="text-center py-12">
                     <p className="text-gray-600">Loading...</p>
                 </div>
-            ) : filteredUsers.length === 0 ? (
+            ) : users.length === 0 ? (
                 <Card>
                     <CardBody className="p-12 text-center">
                         <p className="text-gray-600">No users found</p>
@@ -127,7 +120,7 @@ export default function UsersManagementPage() {
                 </Card>
             ) : (
                 <div className="space-y-4">
-                    {filteredUsers.map((user) => (
+                    {users.map((user) => (
                         <Card key={user._id} className="shadow-md hover:shadow-lg transition-shadow">
                             <CardBody className="p-6">
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -142,16 +135,16 @@ export default function UsersManagementPage() {
                                         <div className="flex gap-2 mt-2">
                                             <span
                                                 className={`inline-block px-2 py-1 text-xs rounded ${user.emailVerified
-                                                        ? 'bg-green-100 text-green-700'
-                                                        : 'bg-yellow-100 text-yellow-700'
+                                                    ? 'bg-green-100 text-green-700'
+                                                    : 'bg-yellow-100 text-yellow-700'
                                                     }`}
                                             >
                                                 {user.emailVerified ? '✓ Email Verified' : 'Email Not Verified'}
                                             </span>
                                             <span
                                                 className={`inline-block px-2 py-1 text-xs rounded ${user.isApproved
-                                                        ? 'bg-green-100 text-green-700'
-                                                        : 'bg-yellow-100 text-yellow-700'
+                                                    ? 'bg-green-100 text-green-700'
+                                                    : 'bg-yellow-100 text-yellow-700'
                                                     }`}
                                             >
                                                 {user.isApproved ? '✓ Approved' : 'Pending Approval'}

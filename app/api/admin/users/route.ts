@@ -21,7 +21,7 @@ export async function GET(request: Request) {
 
         let query: any = {};
         if (status === 'pending') {
-            query = { emailVerified: true, isApproved: false };
+            query = { isApproved: false };
         } else if (status === 'approved') {
             query = { isApproved: true };
         }

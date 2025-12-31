@@ -84,6 +84,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         } lg:translate-x-0 fixed lg:relative top-16 lg:top-0 bottom-0 left-0 z-40 w-64 bg-primary-700 text-white transition-transform duration-300 ease-in-out flex flex-col`}
                 >
                     <div className="p-6 flex-shrink-0">
+                        <Link href="/" className="flex items-center mb-4">
+                            <FaHome className="mr-3" size={20} />
+                            Home
+                        </Link>
                         <h2 className="text-2xl font-bold mb-2">PIA Admin</h2>
                         <p className="text-sm text-primary-200">Welcome, {session.user.name}</p>
                         <p className="text-xs text-primary-300 mt-1">
@@ -113,9 +117,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     </nav>
 
                     <div className="p-6 flex-shrink-0">
+                        {/* Logout Button */}
                         <button
                             onClick={() => signOut({ callbackUrl: '/' })}
-                            className="flex items-center w-full px-4 py-2 text-sm font-medium bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+                            className="flex items-center w-full px-4 py-2 text-sm font-medium bg-red-600 hover:bg-red-700 rounded-lg transition-colors cursor-pointer"
                         >
                             <FaSignOutAlt className="mr-3" size={18} />
                             Logout
