@@ -3,11 +3,11 @@ import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
+import SessionProvider from "@/components/SessionProvider";
+import { ConditionalLayout } from "@/components/ConditionalLayout";
 
 import { siteConfig } from "@/config/site";
 import { fontSans, fontBengali } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -42,15 +42,13 @@ export default function RootLayout({
           fontBengali.variable,
         )}
       >
-        <Providers>
-          <div className="relative flex flex-col min-h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+        <SessionProvider>
+          <Providers>
+            <ConditionalLayout>
               {children}
-            </main>
-            <Footer />
-          </div>
-        </Providers>
+            </ConditionalLayout>
+          </Providers>
+        </SessionProvider>
       </body>
     </html>
   );

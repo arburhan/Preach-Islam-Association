@@ -33,23 +33,40 @@ export default function VolunteerPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         // Handle form submission
-        console.log('Volunteer form submitted:', formData);
-        setIsSubmitted(true);
-
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setIsSubmitted(false);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                age: '',
-                location: '',
-                profession: '',
-                skills: '',
-                availability: '',
+        try {
+            const res = await fetch('/api/volunteer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
             });
-        }, 3000);
+
+            const data = await res.json();
+
+            if (data.success) {
+                console.log('Volunteer form submitted:', formData);
+                setIsSubmitted(true);
+
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    setIsSubmitted(false);
+                    setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        age: '',
+                        location: '',
+                        profession: '',
+                        skills: '',
+                        availability: '',
+                    });
+                }, 3000);
+            } else {
+                alert('Error: ' + data.message);
+            }
+        } catch (error) {
+            console.error('Error submitting volunteer form:', error);
+            alert('সার্ভার সমস্যা হয়েছে');
+        }
     };
 
     const availabilityOptions = [
