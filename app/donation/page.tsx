@@ -1,3 +1,4 @@
+
 import DonatorForm from "@/components/home/donationForm";
 
 export default function DonationPage() {
@@ -15,7 +16,7 @@ export default function DonationPage() {
             {locale === "bn" ? (
               <>
                 <p className="font-semibold  text-blue-900">
-                  "বান্দা বলে: আমার সম্পদ! আমার সম্পদ! অথচ সে মাত্র তিনটি বস্তুর মালিক:"
+                  &quot;বান্দা বলে: আমার সম্পদ! আমার সম্পদ! অথচ সে মাত্র তিনটি বস্তুর মালিক:&quot;
                 </p>
                 <ul className="text-left max-w-3xl mx-auto">
                   <li className="flex items-start gap-2">
@@ -43,7 +44,7 @@ export default function DonationPage() {
             ) : (
               <>
                 <p className="font-semibold text-lg md:text-xl text-blue-900">
-                  "The servant says: My wealth! My wealth! Yet he is only the owner of three things:"
+                  &quot;The servant says: My wealth! My wealth! Yet he is only the owner of three things:&quot;
                 </p>
                 <ul className="text-left max-w-3xl mx-auto ">
                   <li className="flex items-start gap-2">
