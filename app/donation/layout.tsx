@@ -4,7 +4,7 @@ export default function DonationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="py-8 md:py-10">
+    <section className="w-full">
       {children}
     </section>
   );

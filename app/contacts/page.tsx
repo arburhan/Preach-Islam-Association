@@ -52,7 +52,6 @@ export default function ContactsPage() {
         toast.error(data.message || 'Error occurred');
       }
     } catch (error) {
-      console.error('Contact form error:', error);
       toast.error('সার্ভার সমস্যা হয়েছে');
     } finally {
       setIsSubmitting(false);
@@ -102,9 +101,9 @@ export default function ContactsPage() {
   ];
 
   return (
-    <div className="w-full">
+    <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-500 to-blue-600 text-white py-16 md:py-20">
+      <div className="relative bg-gradient-to-br from-primary-600 via-primary-500 to-blue-600 text-white py-16 md:py-20">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -119,19 +118,19 @@ export default function ContactsPage() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </div>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-gray-50">
+      <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileInView={{ opacity: 1, y: 0 }}
               >
                 <Card className="h-full hover:shadow-xl transition-shadow duration-300">
                   <CardBody className="flex flex-col items-center text-center p-6">
@@ -155,10 +154,10 @@ export default function ContactsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Contact Form and Map */}
-      <section className="py-16">
+      <div className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -304,10 +303,10 @@ export default function ContactsPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-primary-600 to-blue-600 text-white">
+      <div className="py-16 bg-gradient-to-br from-primary-600 to-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -343,7 +342,7 @@ export default function ContactsPage() {
             </div>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </div>
+    </>
   );
 }

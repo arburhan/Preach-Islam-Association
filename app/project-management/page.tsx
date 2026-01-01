@@ -10,7 +10,7 @@ import { Donate, JoinUs } from "@/components/shared/buttons";
 
 export default function ProjectManagementPage() {
     return (
-        <div className="w-full px-4 py-12">
+        <div className="px-4 py-12">
             {/* Header */}
             <div className="text-center mb-16">
                 <h1 className={title({ size: "md", class: "mb-4" })}>
