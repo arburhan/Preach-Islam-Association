@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://preachislam.org';
+    const baseUrl = 'https://www.preachislam.org';
 
     return [
         {
