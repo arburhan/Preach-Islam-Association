@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ['/dashboard', '/auth', '/api', '/admin'],
             },
         ],
-        sitemap: 'https://preachislam.org/sitemap.xml',
-        host: 'https://preachislam.org',
+        sitemap: 'https://www.preachislam.org/sitemap.xml',
+        host: 'https://www.preachislam.org',
     };
 }
